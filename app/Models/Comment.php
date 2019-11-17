@@ -17,4 +17,24 @@ class Comment extends Model
      * @var string
      */
     protected $table = 'comments';
+
+    /**
+     * Many to One relation
+     *
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function users()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    /**
+     * Many to One relation
+     *
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function posts()
+    {
+        return $this->belongsTo('App\Models\Post');
+    }
 }
